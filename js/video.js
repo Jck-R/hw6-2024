@@ -22,23 +22,23 @@ document.querySelector("#pause").addEventListener("click", function() {
 
 document.querySelector("#slower").addEventListener("click", function() {
 	console.log("Slow Down Video");
-	video.playbackRate *= 0.95;
+	video.playbackRate *= 0.9;
 	console.log("Speed is " + video.playbackRate);
 });
 
 document.querySelector("#faster").addEventListener("click", function() {
 	console.log("Speed Up Video");
-	video.playbackRate /= 0.95;
+	video.playbackRate /= 0.9;
 	console.log("Speed is " + video.playbackRate);
 });
 
 document.querySelector("#skip").addEventListener("click", function() {
 	console.log("Skip Ahead");
-	if (video.currentTime + 15 >= video.duration) {
+	if (video.currentTime + 10 >= video.duration) {
 		video.currentTime = 0;
 		console.log("Video current time is " + video.currentTime);
 	} else {
-		video.currentTime += 15;
+		video.currentTime += 10;
 		console.log("Video current time is " + video.currentTime);
 	}
 });
@@ -56,7 +56,7 @@ document.querySelector("#mute").addEventListener("click", function() {
 });
 
 document.querySelector("#slider").addEventListener("change", function() {
-	console.log("The current value is " + this.value);
+	console.log("The current value is " + this.value / 100);
 	video.volume = this.value / 100;
 	document.querySelector("#volume").innerHTML = this.value + "%";
 });
